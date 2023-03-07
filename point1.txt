@@ -1,0 +1,49 @@
+First Task
+ALGORITHM
+VAR
+   tab : ARRAY_OF SRING[];
+   WC:=1;
+   VC:=0;
+BEGIN
+    Write("Wite a phrase");
+    Read(pos);
+    tab:= tab.append(pos)
+    IF (pos="") THEN
+    WC:=0;
+   FOR i FROM 0 TO tab.length-1 DO
+   IF (tab.length[i]=" ") THEN
+   WC:= WC+1 ;
+   ELSEIF (tab.length[i]="a" OR tab.length[i]="e" OR tab.length[i]="i" OR tab.length[i]="u" OR tab.length[i]="o") THEN
+   VC := VC+1 ;
+  END_IF
+   END_FOR
+
+   Write("number of words is",WC);
+   Write("number of vaouls is",VC);
+END
+
+
+Second Task:
+ALGORITHM
+ VAR
+    sum: ARRAY OF INTEGER;
+    add:=0;
+    set1:=[3, 1, 7, 9];
+    set2:=[2, 4, 1, 9, 3];
+ BEGIN
+ FOR i FROM 0 TO set2.length-1 DO
+    IF (NOT set1.include(set2[i])) THEN
+    sum:=sum+[set2[i]];
+ END_IF;
+ END_FOR;
+ FOR i FROM 0 TO set1.length-1 DO
+      IF (NOT set2.include(set1[i])) THEN
+      sum:=sum+[set1[i]];
+ END_IF;
+ END_FOR;  
+ FOR i FROM 0 TO sum.length-1 DO
+        add:=add+sum[i];
+ END_FOR;
+    
+    Write(add, " (distinct elements ", sum, ")");
+ END
